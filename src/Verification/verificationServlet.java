@@ -49,13 +49,13 @@ public class verificationServlet extends HttpServlet {
 
 			// 3. Establish the connection
 			conn = DriverManager.getConnection(url, myusername, mypassword);
-		
+
 			String pass = request.getParameter("password");
 			String user = request.getParameter("userId");
 
 			if (request.getSession().getAttribute("user") == null) {//if user is null it checks in the  database if user exists
 				
-		//Query
+				//Query
 				String Query = "SELECT * FROM admin_user_sr WHERE password=? AND user_name=?";
 
 				PreparedStatement stmt = conn.prepareStatement(Query);
